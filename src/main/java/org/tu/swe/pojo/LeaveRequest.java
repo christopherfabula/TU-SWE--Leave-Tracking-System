@@ -1,57 +1,43 @@
 package org.tu.swe.pojo;
 
-public class LeaveRequest {
-    private int requestId;
-    private Employee employee;
-    private String startDate;
-    private String endDate;
-    private String status;
+import org.tu.swe.interfaces.Approvable;
 
-    public LeaveRequest(int requestId, Employee employee, String startDate, String endDate) {
+public abstract class LeaveRequest implements Approvable {
+
+    protected int requestId;
+
+    protected Employee employee;
+
+    protected String startDate;
+
+    protected String endDate;
+
+    protected String status;
+
+    protected String leaveType;
+
+    public LeaveRequest(int requestId, Employee employee, String startDate, String endDate, String leaveType) {
         this.requestId = requestId;
         this.employee = employee;
         this.startDate = startDate;
         this.endDate = endDate;
+        this.leaveType = leaveType;
         this.status = "Pending";
     }
 
-    public int getRequestId() {
-        return requestId;
+    @Override
+    public boolean approve(String approverName) {
+        this.status = "Approved";
+        System.out.println(approverName + " has approved your " + this.leaveType + ".");
+        return true;
     }
 
-    public void setRequestId(int requestId) {
-        this.requestId = requestId;
+    @Override
+    public boolean deny(String approverName, String reason) {
+        this.status = "Denied";
+        System.out.println(approverName + " has denied your " + this.leaveType + " due to " + reason + ".");
+        return true;
     }
 
-    public Employee getEmployee() {
-        return employee;
-    }
 
-    public void setEmployee(Employee employee) {
-        this.employee = employee;
-    }
-
-    public String getStartDate() {
-        return startDate;
-    }
-
-    public void setStartDate(String startDate) {
-        this.startDate = startDate;
-    }
-
-    public String getEndDate() {
-        return endDate;
-    }
-
-    public void setEndDate(String endDate) {
-        this.endDate = endDate;
-    }
-
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
 }
