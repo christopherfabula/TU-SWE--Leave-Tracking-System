@@ -8,4 +8,15 @@ public class VacationLeaveRequest extends LeaveRequest {
         super(requestId, employee, startDate, endDate, "Vacation Leave");
         this.isPaidTimeOff = isPaidTimeOff;
     }
+
+    @Override
+    public int calculateLeaveDays() {
+        return 10;
+    }
+
+    @Override
+    public boolean processRequest() {
+        System.out.println("Processing vacation leave request for " + getEmployee().getName());
+        return true;
+    }
 }

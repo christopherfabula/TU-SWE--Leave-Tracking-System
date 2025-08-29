@@ -8,4 +8,15 @@ public class MaternityLeaveRequest extends LeaveRequest {
         super(requestId, employee, startDate, endDate, "Maternity Leave");
         this.expectedDeliveryDate = expectedDeliveryDate;
     }
+
+    @Override
+    public int calculateLeaveDays() {
+        return 90;
+    }
+
+    @Override
+    public boolean processRequest() {
+        System.out.println("Processing maternity leave request for " + getEmployee().getName());
+        return true;
+    }
 }
