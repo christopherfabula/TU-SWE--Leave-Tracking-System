@@ -1,7 +1,8 @@
 # Capstone: Part 1 Leave Tracking System
-Guided Laboratory: OOP Basics - Leave Tracking
+Guided Laboratory: Advanced OOP in Java - HR Leave System
 
-Objective: To apply the fundamental concepts of Object Oriented Programming (Classes, Objects, Encapsulation, and Constructors) by creating the core components of a leave tracking application
+Objective: To apply the concepts of Inheritance, Polymorphism, Interfaces, Abstract Classes, and Inner Classes by building a flexible leave request processing system.
 
 # Output
-![Alt text](src/main/resources/img/Caps1_Screenshot.png)
+![Alt text](src/main/resources/img/Caps2_Screenshot_01.png)
+![Alt text](src/main/resources/img/Caps2_Screenshot_02.png)
